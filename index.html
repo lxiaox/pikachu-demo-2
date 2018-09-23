@@ -13,6 +13,18 @@
     </style>
 </head>
 <body>
+    <audio id="audioControl" src="http://p8rplhkt6.bkt.clouddn.com/%E9%BB%84%E6%B5%A9%E7%84%B6%20-%20%E7%9A%AE%E5%8D%A1%E4%B8%98.mp3"></audio>
+    <div class="audioControlBtns">
+        <button class="playMusicBtn" id="playMusicBtn">音乐</button>
+        <button class="pauseMusicBtn active" id="pauseMusicBtn">暂停</button>
+    </div>
+        <!--<button onclick="document.getElementById('demo').volume=0.1">降低音量</button>-->
+        <!--<button onclick="document.getElementById('demo').volume+=0.1">提高音量</button>-->
+    <div id="speedButtons" class="speedButtons">
+        <button id="fast" class="fast" data-speed="fast">快速</button>
+        <button id="normal" class="normal active" data-speed="normal">正常</button>
+        <button id="slow" class="slow" data-speed="slow">慢速</button>
+    </div>
     <pre id="codeView" class="codeView"></pre>
     <div id="pikachuWrapper" class="pikachuWrapper">
         <div class="container">

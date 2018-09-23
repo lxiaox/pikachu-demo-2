@@ -1,9 +1,41 @@
 !function(){
     //初始化定义代码
     let code = ''
+    let duration = 15
     init()
     //写代码进页面
     writeCode(code)
+    //监听
+    $('#speedButtons').on('click','button',function (e) {
+        let $button = $(e.currentTarget)
+        let speed = $button.attr('data-speed')
+        console.log($button)
+        $button.addClass('active').siblings('.active').removeClass('active')
+        switch(speed){
+            case'fast':
+                duration = 5
+                break
+            case'normal':
+                duration = 15
+                break
+            case'slow':
+                duration = 50
+                break
+        }
+    })
+
+    //play music
+    let audioControl = document.getElementById('audioControl')
+    audioControl.volume = '0.1'
+    $('#playMusicBtn').on('click',function(){
+        audioControl.play()
+        $(this).addClass('active').siblings('.active').removeClass('active')
+    })
+    $('#pauseMusicBtn').on('click',function(){
+        audioControl.pause()
+        $(this).addClass('active').siblings('.active').removeClass('active')
+    })
+
 
     ///////////////////////////////////////////////
 
@@ -11,19 +43,21 @@
         let n = 0
         let codeView = document.querySelector('#codeView')
         let styleTag = document.querySelector('#styleTag')
-        let timer = setInterval(function () {
+        setTimeout(function run() {
             n += 3
             codeView.innerHTML = Prism.highlight(code.substring(0, n), Prism.languages.css)
             styleTag.innerHTML = code.substring(0, n)
             codeView.scrollTop = codeView.scrollHeight
-            if (n >= code.length) {
-                window.clearInterval(timer)
+            if (n < code.length) {
+                setTimeout(run,duration)
             }
-        }, 10)
+        }, duration)
     }
     function init() {
-        code = `/* 画一个皮卡丘 */
+        code = `/* 今天，我们来画一个皮卡丘 */
+        
 /* 先调整一下画布 */
+
 .codeView{
     width: 25%
 }
