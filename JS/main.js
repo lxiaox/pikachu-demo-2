@@ -9,11 +9,10 @@
     $('#speedButtons').on('click','button',function (e) {
         let $button = $(e.currentTarget)
         let speed = $button.attr('data-speed')
-        console.log($button)
         $button.addClass('active').siblings('.active').removeClass('active')
         switch(speed){
             case'fast':
-                duration = 5
+                duration = 0
                 break
             case'normal':
                 duration = 15
@@ -44,7 +43,7 @@
         let codeView = document.querySelector('#codeView')
         let styleTag = document.querySelector('#styleTag')
         setTimeout(function run() {
-            n += 3
+            n += 6
             codeView.innerHTML = Prism.highlight(code.substring(0, n), Prism.languages.css)
             styleTag.innerHTML = code.substring(0, n)
             codeView.scrollTop = codeView.scrollHeight
