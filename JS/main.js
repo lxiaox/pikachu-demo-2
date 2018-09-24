@@ -4,7 +4,7 @@
     let duration = 15
     init()
     //写代码进页面
-    writeCode(code)
+    //writeCode(code)
     //监听
     $('#speedButtons').on('click','button',function (e) {
         let $button = $(e.currentTarget)
