@@ -376,7 +376,6 @@
 .lighting-right{
     display: block;
 }
-
 `
     }
 }.call()

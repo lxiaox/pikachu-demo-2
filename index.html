@@ -19,20 +19,26 @@
                 width: 100vw;
                 flex-direction: column;
                 align-items: stretch;
-                overflow: hidden;
+                /*overflow: hidden;*/
             }
             .codeView{
                 position: static;
                 height: 20vh;
-                flex: auto;
-                width: 94vw;
-                margin-left: 3vw;
+                flex: 1 0 30vh;
+                width: 100vw;
+                margin-left: 0;
             }
             .pikachuWrapper{
                 position: static;
-                height: 70vh;
-                width: 94vw;
-                margin-left: 3vw;
+                height: 174vh;
+                width: 100vw;
+                margin-left: 0vw;
+            }
+            .pikachuWrapper> .container {
+                height: calc(100%-6vh);
+                z-index: 1;
+                margin-top: 4vh;
+                margin-bottom: 2vh;
             }
 
             .speedButtons{
@@ -45,14 +51,13 @@
             }
             .speedButtons> button,
             .audioControlBtns> button{
-                white-space:nowrap
+                white-space:nowrap;
                 width: 10vw;
                 height: 5vh;
                 margin-top: 2vh;
+                padding: 1vh;
             }
-            .container{
-                z-index: 1;
-            }
+
         }
     </style>
 </head>
