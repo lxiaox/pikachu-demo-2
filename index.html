@@ -1,111 +1,111 @@
 <!doctype html>
 <html lang="zh-hans">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>pikachu-2</title>
-    <link rel="stylesheet" href="./vendor/prism/prism.css">
-    <link rel="stylesheet" href="css/default.css">
-    <style id="styleTag">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>pikachu-2</title>
+  <link rel="stylesheet" href="./vendor/prism/prism.css">
+  <link rel="stylesheet" href="css/default.css">
+  <style id="styleTag">
 
-    </style>
-    <style>
-        @media (max-width: 450px){
-            body{
-                display: flex;
-                height: 100vh;
-                width: 100vw;
-                flex-direction: column;
-                align-items: stretch;
-                /*overflow: hidden;*/
-            }
-            .codeView{
-                position: static;
-                height: 20vh;
-                flex: 1 0 30vh;
-                width: 100vw;
-                margin-left: 0;
-            }
-            .pikachuWrapper{
-                position: static;
-                height: 174vh;
-                width: 100vw;
-                margin-left: 0vw;
-            }
-            .pikachuWrapper> .container {
-                height: calc(100%-6vh);
-                z-index: 1;
-                margin-top: 4vh;
-                margin-bottom: 2vh;
-            }
+  </style>
+  <style>
+    @media (max-width: 450px){
+      body{
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        align-items: stretch;
+        /*overflow: hidden;*/
+      }
+      .codeView{
+        position: static;
+        height: 20vh;
+        flex: 1 0 30vh;
+        width: 100vw;
+        margin-left: 0;
+      }
+      .pikachuWrapper{
+        position: static;
+        height: 174vh;
+        width: 100vw;
+        margin-left: 0vw;
+      }
+      .pikachuWrapper> .container {
+        height: calc(100%-6vh);
+        z-index: 1;
+        margin-top: 4vh;
+        margin-bottom: 2vh;
+      }
 
-            .speedButtons{
-                top: 0;
-                right: 10vw;
-            }
-            .audioControlBtns{
-                top: 21vh;
-                right: 10vw;
-            }
-            .speedButtons> button,
-            .audioControlBtns> button{
-                white-space:nowrap;
-                width: 10vw;
-                height: 5vh;
-                margin-top: 2vh;
-                padding: 0;
-            }
+      .speedButtons{
+        top: 0;
+        right: 10vw;
+      }
+      .audioControlBtns{
+        top: 21vh;
+        right: 10vw;
+      }
+      .speedButtons> button,
+      .audioControlBtns> button{
+        white-space:nowrap;
+        width: 10vw;
+        height: 5vh;
+        margin-top: 2vh;
+        padding: 0;
+      }
 
-        }
-    </style>
+    }
+  </style>
 </head>
 <body>
-    <audio id="audioControl" src="http://p8rplhkt6.bkt.clouddn.com/%E9%BB%84%E6%B5%A9%E7%84%B6%20-%20%E7%9A%AE%E5%8D%A1%E4%B8%98.mp3"></audio>
-    <div class="audioControlBtns">
-        <button class="playMusicBtn" id="playMusicBtn">音乐</button>
-        <button class="pauseMusicBtn active" id="pauseMusicBtn">暂停</button>
+  <audio id="audioControl" src="http://p8rplhkt6.bkt.clouddn.com/%E9%BB%84%E6%B5%A9%E7%84%B6%20-%20%E7%9A%AE%E5%8D%A1%E4%B8%98.mp3"></audio>
+  <div class="audioControlBtns">
+    <button class="playMusicBtn" id="playMusicBtn">音乐</button>
+    <button class="pauseMusicBtn active" id="pauseMusicBtn">暂停</button>
+  </div>
+  <div id="speedButtons" class="speedButtons">
+    <button id="fast" class="fast" data-speed="fast">快速</button>
+    <button id="normal" class="normal active" data-speed="normal">正常</button>
+    <button id="slow" class="slow" data-speed="slow">慢速</button>
+  </div>
+  <pre id="codeView" class="codeView"></pre>
+  <div id="pikachuWrapper" class="pikachuWrapper">
+    <div class="container">
+      <div class="pikachuHead">
+        <img class="lighting-left" src="./img/lighting.gif" alt="闪电">
+        <img class="lighting-right" src="./img/lighting.gif" alt="闪电">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+        <div class="eye-left"></div>
+        <div class="eye-right"></div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+        <div class="check-left"></div>
+        <div class="check-right"></div>
+      </div>
+      <div class="pikachuBody">
+        <div class="hand-left"></div>
+        <div class="hand-right"></div>
+        <div class="firstMark"></div>
+        <div class="lastMark"></div>
+      </div>
+      <div class="foot-left"></div>
+      <div class="foot-right"></div>
+      <div class="tail">
+        <div class="part1"></div>
+        <div class="part2"></div>
+        <div class="part3"></div>
+        <div class="part4"></div>
+        <div class="part5"></div>
+      </div>
     </div>
-    <div id="speedButtons" class="speedButtons">
-        <button id="fast" class="fast" data-speed="fast">快速</button>
-        <button id="normal" class="normal active" data-speed="normal">正常</button>
-        <button id="slow" class="slow" data-speed="slow">慢速</button>
-    </div>
-    <pre id="codeView" class="codeView"></pre>
-    <div id="pikachuWrapper" class="pikachuWrapper">
-        <div class="container">
-            <div class="pikachuHead">
-                <img class="lighting-left" src="./img/lighting.gif" alt="闪电">
-                <img class="lighting-right" src="./img/lighting.gif" alt="闪电">
-                <div class="ear-left"></div>
-                <div class="ear-right"></div>
-                <div class="eye-left"></div>
-                <div class="eye-right"></div>
-                <div class="nose"></div>
-                <div class="mouth"></div>
-                <div class="check-left"></div>
-                <div class="check-right"></div>
-            </div>
-            <div class="pikachuBody">
-                <div class="hand-left"></div>
-                <div class="hand-right"></div>
-                <div class="firstMark"></div>
-                <div class="lastMark"></div>
-            </div>
-            <div class="foot-left"></div>
-            <div class="foot-right"></div>
-            <div class="tail">
-                <div class="part1"></div>
-                <div class="part2"></div>
-                <div class="part3"></div>
-                <div class="part4"></div>
-                <div class="part5"></div>
-            </div>
-        </div>
-    </div>
-    <script src="./vendor/prism/prism.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="JS/main.js"></script>
+  </div>
+  <script src="./vendor/prism/prism.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="JS/main.js"></script>
 </body>
 </html>
